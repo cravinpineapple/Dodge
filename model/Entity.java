@@ -100,10 +100,6 @@ public abstract class Entity implements IEntityInfo, IEntityRender {
 
 	public void updatePlayerShape(Rectangle playerShape) { }
 
-	// public void updateShape() {
-	// 	entityShape = new Rectangle(x, y, currentWidth, currentHeight);
-	// }
-
 	abstract public void updateShape();
 
 	public int getSpeed() {
