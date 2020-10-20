@@ -8,6 +8,7 @@ import java.awt.event.ActionEvent;
 
 import javax.swing.Timer;
 
+import controller.GamePanelListener;
 import controller.Key;
 import model.images.ImageStore;
 import view.GameCanvas;
@@ -68,7 +69,7 @@ public class Player extends Entity {
 
 	@Override
 	public void render(Graphics2D g2) {
-		if (hasPower) {
+		if (!GamePanelListener.showHitBoxes) {
 			// g2.setColor(new Color(rand.nextInt(256), rand.nextInt(256), rand.nextInt(256)));
 			g2.setColor(new Color(0, 0, 0, 0));
 		}

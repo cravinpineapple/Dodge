@@ -6,6 +6,7 @@ import java.awt.Rectangle;
 
 import java.util.Random;
 
+import controller.GamePanelListener;
 import model.images.ImageStore;
 import view.GameCanvas;
 
@@ -47,7 +48,12 @@ public class PowerUp extends Entity {
 
 	@Override
 	public void render(Graphics2D g2) {
-		g2.setColor(color);
+		if (!GamePanelListener.showHitBoxes) {
+			g2.setColor(new Color(0, 0, 0, 0));
+		}
+		else 
+			g2.setColor(color);
+			
 		g2.drawImage(getImage(), null, x, y);
 		g2.fill(entityShape);
 	}

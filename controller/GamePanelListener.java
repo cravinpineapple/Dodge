@@ -10,7 +10,7 @@ import java.awt.event.KeyEvent;
 
 public class GamePanelListener implements KeyListener {
 
-	boolean showHitBoxes = false;
+	public static boolean showHitBoxes = false;
 
 	GamePanel gamePanel;
 
