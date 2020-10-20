@@ -17,6 +17,7 @@ public class ImageStore {
 	public static BufferedImage wizardLeft;
 	public static BufferedImage wizardRight;
 	public static BufferedImage potion;
+	public static BufferedImage background;
 
 	public static int[] orcXY = {80, 80};
 	public static int[] wizXY = {50, 65};
@@ -25,13 +26,14 @@ public class ImageStore {
 	
 	// executed before main method
 	static {
-		String cwd = System.getProperty("user.dir");
-		System.out.println("cwd: " + cwd);
+		// String cwd = System.getProperty("user.dir");
+		// System.out.println("cwd: " + cwd);
 		orcLeft = readImage("model/images/orcLeft.png", (int) (orcXY[0] * GamePanel.sizeSetting), (int) (orcXY[1] * GamePanel.sizeSetting));
 		orcRight = readImage("model/images/orcRight.png", (int) (orcXY[0] * GamePanel.sizeSetting), (int) (orcXY[1] * GamePanel.sizeSetting));
 		wizardLeft = readImage("model/images/wizardLeft.png", wizXY[0], wizXY[1]);
 		wizardRight = readImage("model/images/wizardRight.png", wizXY[0], wizXY[1]);
 		potion = readImage("model/images/potion.png", potXY[0], potXY[1]);
+		background = readImage("model/images/background.png", 1911, 974);
 	}
 
 	// reads from file and scales to width & height

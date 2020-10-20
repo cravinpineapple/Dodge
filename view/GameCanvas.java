@@ -8,6 +8,8 @@ import java.awt.Rectangle;
 
 import javax.swing.JPanel;
 
+import model.images.ImageStore;
+
 public class GameCanvas extends JPanel {
 
 	public static final int WIDTH = 1275;
@@ -40,6 +42,9 @@ public class GameCanvas extends JPanel {
 		super.paintComponent(g);
 
 		Graphics2D g2 = (Graphics2D) g;
+
+		// rendering background
+		g2.drawImage(ImageStore.background, null, 0, 0);
 
 		// rendering walls
 		g2.setColor(Color.black);

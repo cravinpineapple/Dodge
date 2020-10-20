@@ -108,17 +108,16 @@ public class Enemy extends Entity {
 				window.revalidate();
 				gamePanel.getGc().stop();
 			}
-			if (y <= borderWidth) {
-				setY(borderWidth);
+			if (hbY <= borderWidth) {
+				setHbY(borderWidth); // was set y
 				direction = topBounce[rand.nextInt(3)];
 			}
 			if (hbY >= gHeight - borderWidth - hbHeight) {
 				setHbY(gHeight - borderWidth - hbHeight);
-				System.out.println("hbY: " + hbY);
 				direction = botBounce[rand.nextInt(3)];
 			}
-			if (x <= borderWidth) {
-				setX(borderWidth);
+			if (hbX <= borderWidth) {
+				setHbX(borderWidth); // was set x
 				direction = leftBounce[rand.nextInt(3)];
 			}
 			if (hbX >= gWidth - borderWidth - hbWidth) {

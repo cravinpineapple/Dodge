@@ -25,7 +25,7 @@ public class Player extends Entity {
 		public void actionPerformed(ActionEvent e) {
 			powerUpTimerCount++;
 			
-			if (powerUpTimerCount == 5) {
+			if (powerUpTimerCount == 3) {
 				hasPower = false;
 				powerUpTimerCount = 0;
 				powerUpTimer.stop();
@@ -76,7 +76,9 @@ public class Player extends Entity {
 		else 
 			g2.setColor(color);
 
-		g2.drawImage(getImage(), null, x, y);
+		if (!hasPower)
+			g2.drawImage(getImage(), null, x, y);
+			
 		g2.fill(entityShape);
 	}
 
@@ -141,10 +143,12 @@ public class Player extends Entity {
 				setY(borderWidth);
 			if (y >= gHeight - borderWidth - height)
 				setY(gHeight - borderWidth - height);
-			if (x <= borderWidth)
+			if (x <= borderWidth) {
 				setX(borderWidth);
-			if (x >= gWidth - borderWidth - width)
+			}
+			if (x >= gWidth - borderWidth - width) {
 				setX(gWidth - borderWidth - width);
+			}
 		}
 	}
 
@@ -161,7 +165,3 @@ public class Player extends Entity {
 	}
 	
 }
-
-/*
-
-*/

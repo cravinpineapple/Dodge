@@ -54,7 +54,7 @@ public class MenuScreen {
 		});
 
 		easyButton.addActionListener (e -> {
-			GamePanel.sizeSetting = 0.5;
+			GamePanel.sizeSetting = 1;
 			GamePanel.speedSetting = -8;
 		});
 		
@@ -63,7 +63,7 @@ public class MenuScreen {
 			GamePanel.speedSetting = -5;
 		});
 		hardButton.addActionListener (e -> {
-			GamePanel.sizeSetting = 1.5;
+			GamePanel.sizeSetting = 1;
 			GamePanel.speedSetting = -2;
 		});
 

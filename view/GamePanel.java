@@ -19,7 +19,7 @@ public class GamePanel {
 	private JFrame window;
 	private JPanel canvas;
 	
-	Entity player = new Player(2, 200, 300, Color.blue, 1);
+	Entity player = new Player(-1, 200, 300, Color.blue, 1);
 	ArrayList<Entity> enemies = new ArrayList<>();
 	Entity powerUp = new PowerUp(0, 300, 300, Color.yellow, 0.5);
 
@@ -35,7 +35,7 @@ public class GamePanel {
 
 	public void init() {
 		Container cp = window.getContentPane();
-		addEnemy(speedSetting, 700, 350, Color.red, sizeSetting);
+		addEnemy(speedSetting, 885, 430, Color.red, sizeSetting);
 		powerUp.setGamePanel(this);
 		
 		canvas = new GameCanvas(this);
@@ -48,6 +48,7 @@ public class GamePanel {
 	}
 
 	public void addEnemy(int speedMult, int x, int y, Color color, double sizeMult) {
+		System.out.println(sizeMult);
 		Entity enemy = new Enemy(speedMult, x, y, color, sizeMult);
 		enemy.setGamePanel(this);
 		enemies.add(enemy);
@@ -81,13 +82,6 @@ public class GamePanel {
 
 	public void render() {
 		canvas.repaint();
-	}
-
-	public void checkCanvasNull() {
-		if (canvas == null)
-			System.out.println("Canvas is NULL");
-		else
-			System.out.println("Canvas is NOT null");
 	}
 
 	public GameContainer getGc() {

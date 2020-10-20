@@ -65,8 +65,8 @@ public class GameContainer implements Runnable {
 			}
 			if (secondCount == 5) {
 				// adding enemies
-				GamePanel.speedSetting++;
-				panel.addEnemy(GamePanel.speedSetting, GameCanvas.WIDTH / 2, GameCanvas.HEIGHT / 2, Color.RED, GamePanel.sizeSetting);
+				GamePanel.speedSetting += 0.5;
+				panel.addEnemy(GamePanel.speedSetting, 885, 430, Color.RED, GamePanel.sizeSetting);
 				for (var e: panel.getEnemies()) {
 					panel.changeEntitySpeed(e, GamePanel.speedSetting);
 				}
